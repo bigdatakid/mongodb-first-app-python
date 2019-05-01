@@ -20,9 +20,9 @@ articlesCollection = blogDatabase.articles
 randomUser = "rocha"
 
 
-karmaCount = usersCollection.find({ "post_number" :1  }).count()
+postCount = usersCollection.find({ "post_number" :1  }).count()
 
-print(karmaCount)
+print(postCount)
 
 # Add Comments to an article
 

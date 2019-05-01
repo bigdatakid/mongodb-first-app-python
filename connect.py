@@ -10,7 +10,7 @@ from pymongo.errors import ConnectionFailure
 
 connectionString = "mongodb+srv://" + MongoDB_user_name + ":" + MongoDB_cluster_password  + "@" + MongoDB_cluster_name
 connectionString= connectionString + "/test?retryWrites=true"
-print(connectionString)
+
 # replace <PASSWORD> with user password
 client = pymongo.MongoClient()
 
