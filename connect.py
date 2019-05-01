@@ -10,33 +10,13 @@ from pymongo.errors import ConnectionFailure
 
 connectionString = "mongodb+srv://" + MongoDB_user_name + ":" + MongoDB_cluster_password  + "@" + MongoDB_cluster_name
 connectionString= connectionString + "/test?retryWrites=true"
-
+print(connectionString)
 # replace <PASSWORD> with user password
 client = pymongo.MongoClient()
 
 try:
     status = client.admin.command("serverStatus")
     print("Connected to MongoDB Atlas with status: ")
-    ## pprint.pprint(status)
-########
 
-    #Selecting  a database
-    blogDatabase = client.blog
-
-    # Selecting a collection
-    usersCollection = blogDatabase.users
-
-    rocha = {
-        "username": "rocha",
-        "password": "password",
-        "lang": "EN"
-    }
-
-    usersCollection.insert_one(rocha)
-
-    user = usersCollection.find_one()
-
-    print(user)
-########
 except ConnectionFailure:
     print("MongoDB Atlas connection not established.")
